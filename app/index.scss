@@ -1,0 +1,134 @@
+@import "~@blueprintjs/core/dist/blueprint.css";
+
+body {
+  font-family: Helvetica;
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.languages {
+  display: flex;
+  list-style-type: none;
+  justify-content: center;
+
+  &-item {
+    cursor: pointer;
+    padding: 0 10px;
+
+    &:hover,
+    &.active {
+      color: red;
+    }
+  }
+}
+
+.avatar {
+  width: 150px;
+  border-radius: 50%;
+}
+
+.space-list-items {
+  margin-bottom: 7px;
+  list-style-type: none;
+}
+
+.languages {
+  display: flex;
+  justify-content: center;
+}
+
+.languages li {
+  margin: 10px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.popular {
+  &-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    list-style-type: none;
+  }
+
+  &-item {
+    margin: 20px;
+    text-align: center;
+    max-width: 250px;
+  }
+
+  &-rank {
+    font-size: 20px;
+    margin: 10px;
+  }
+}
+
+.spinner-wrapper {
+  height: 20vw;
+  margin: 20px auto;
+  width:20vw;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+.huge-size {
+  display: block !important;
+  width: 100% !important;
+  margin: 10px auto;
+}
+
+.loading-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+.nav-wrapper {
+  margin-bottom: 15px;
+}
+
+.row {
+  display: flex;
+  justify-content: space-around;
+}
+
+.select-user,
+.player {
+  &-review,
+  &-form{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    text-align: center;
+    margin-top: 30px;
+
+    &__input,
+    &__button{
+      margin: 25px;
+    }
+
+    .avatar {
+      width:300px;
+      height:300px;
+      margin: 25px;
+    }
+  }
+
+  &-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+
+  &-item {
+    text-align: center;
+  }
+}

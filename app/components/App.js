@@ -1,38 +1,18 @@
-var React = require('react');
-var ReactRouter = require('react-router-dom');
-var Router = ReactRouter.BrowserRouter;
-var Route = ReactRouter.Route;
-// var Link = ReactRouter.Link;
-var Switch = ReactRouter.Switch;
+/**
+ * Created by MilkyWay on 02/07/2017.
+ */
+var React = require('react')
+var Popular = require('./Popular/Popular')
 
-var Home = require('./Home');
-var Popular = require('./Popular');
-var Battle = require('./Battle');
-var Nav = require('./Nav');
-var Results = require('./Results');
-var DialogError = require('./DialogError');
 class App extends React.Component {
-  render() {
-    return (
-        <Router>
+    render() {
+        return (
             <div className="container">
-                <Nav/>
-                <Switch>
-                    <Route exact path='/' component={Home}/>
-                    <Route exact path='/battle' component={Battle}/>
-                    <Route path='/popular' component={Popular}/>
-                    <Route path='/battle/results' component={Results}/>
-                    <Route render ={()=>{
-                        return (
-                            <DialogError/>
-                        )
-                    }}
-                    />
-                </Switch>
+                <h1>Hello World</h1>
+                <Popular/>
             </div>
-        </Router>
-    )
-  }
+        )
+    }
 }
 
-module.exports = App;
+module.exports = App

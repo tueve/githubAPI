@@ -1,0 +1,9 @@
+@import "./Battle/Battle";
+@import "./Homepage/Homepage";
+@import "./Popular/Popular";
+@import "~@blueprintjs/core/dist/blueprint.css";
+
+.container {
+  min-width: 1200px;
+  margin: 0 auto;
+}

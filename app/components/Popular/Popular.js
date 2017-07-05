@@ -1,10 +1,10 @@
 /**
  * Created by MilkyWay on 02/07/2017.
  */
-var React = require('react')
-var Api = require('../../ultils/Api')
-var PropTypes = require('prop-types');
-var Loading = require('../Loading/Loading')
+const React = require('react')
+const Api = require('../../ultils/Api')
+const PropTypes = require('prop-types');
+const Loading = require('../Loading/Loading')
 
 function Avatar(props) {
     return (

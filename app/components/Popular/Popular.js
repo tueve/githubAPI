@@ -3,7 +3,7 @@
  */
 const React = require('react')
 const Api = require('../../ultils/Api')
-const PropTypes = require('prop-types');
+const PropTypes = require('prop-types')
 const Loading = require('../Loading/Loading')
 
 function Avatar(props) {
@@ -92,7 +92,7 @@ ListItem.propTypes = {
 }
 
 function Languages(props) {
-    const languages = ['All', 'HTML', 'CSS', 'JAVASCRIPT', 'REACT', 'ANGULAR', 'VUE']
+    const languages = ['All', 'HTML', 'CSS', 'JAVASCRIPT', 'REACT', 'ANGULAR', 'VUE','PHP']
     return (
         <div className="languages--wrapper">
             <ul className="languages-list--wrapper">

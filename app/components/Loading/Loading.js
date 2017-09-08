@@ -25,7 +25,6 @@ class Loading extends React.Component {
                         text: this.state.text + '.'
                     }
                 })
-            console.log(this.state.text)
         },this.props.speed)
     }
 

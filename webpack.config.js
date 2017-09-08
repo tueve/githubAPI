@@ -2,6 +2,8 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const webpack = require('webpack');
+var styleLintPlugin = require('stylelint-webpack-plugin');
+
 const extractSass = new ExtractTextPlugin({
     filename: "[name].[contenthash].css",
     disable: process.env.NODE_ENV === "development"
@@ -10,28 +12,34 @@ const extractSass = new ExtractTextPlugin({
 
 
 var config = {
-  entry: './app/index.js',
-  output: {
-    path: path.resolve(__dirname, 'dist'),
-    filename: 'index_bundle.js',
-    publicPath: '/'
-  },
-  module: {
-    rules: [{
-      test: /\.(js|jsx)$/,
-      use: 'babel-loader'
+    entry: './app/index.js',
+    output: {
+        path: path.resolve(__dirname, 'dist'),
+        filename: 'index_bundle.js',
+        publicPath: '/'
     },
+    resolve: {
+        alias: {
+            Common: path.resolve(__dirname, '../TemperatureForm/TempInput')
+        },
+        extensions: ['.js', '.jsx', '.json', '.scss']
+    },
+    module: {
+        rules: [{
+        test: /\.(js|jsx)$/,
+        use: 'babel-loader'
+        },
     {
-      test: /\.(scss|css)$/,
-      use: extractSass.extract({
-          use: [{
-              loader: "css-loader"
-          }, {
-              loader: "sass-loader"
-          }],
+        test: /\.(scss|css)$/,
+        use: extractSass.extract({
+              use: [{
+                  loader: "css-loader"
+            }, {
+                  loader: "sass-loader"
+            }],
           // use style-loader in development
-          fallback: "style-loader"
-      })
+            fallback: "style-loader"
+        })
     },
         {
             test: /\.(woff|woff2)$/,
@@ -54,13 +62,19 @@ var config = {
         }]
   },
 
-    plugins: [
+        plugins: [
     new HtmlWebpackPlugin({
       template: 'app/index.html'
     }),
     new webpack.HotModuleReplacementPlugin(),
-    new ExtractTextPlugin("styles.css")
-
+    new ExtractTextPlugin("styles.css"),
+    new styleLintPlugin({
+        configFile: '.stylelintrc',
+        context: 'app',
+        files: '**/*.scss',
+        failOnError: false,
+        quiet: false,
+    })
   ],
   devServer: {
     hot: true,

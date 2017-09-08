@@ -1,0 +1,11 @@
+/**
+ * Created by MilkyWay on 26/08/2017.
+ */
+export const ActionTypes = {
+    ADD_TODOS: 'ADD_TODOS',
+    REMOVE_TODOS: 'REMOVE_TODOS',
+    EDIT_TODOS: 'EDIT_TODOS',
+    COMPLETE_TODOS: 'COMPLETE_TODOS',
+    COMPLETE_ALL: 'COMPLETE_ALL',
+    CLEAR_COMPLETED: 'CLEAR_COMPLETED'
+}
